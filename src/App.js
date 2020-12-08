@@ -20,9 +20,7 @@ class App extends Component {
         </div>
         <p className="App-intro">
           <button onClick={this.test}>click me {this.state.flag.toString()}</button>
-          <hr/>
           <AllUsers/>
-          <hr/>
         </p>
       </div>
     );

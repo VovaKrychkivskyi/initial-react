@@ -54,8 +54,8 @@ class AllUsers extends Component {
         {
           chosenOnePost &&
           <div>
+            <hr/>
             <div>
-              <hr/>
               Post:
             </div>
             <h3>
