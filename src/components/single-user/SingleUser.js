@@ -9,7 +9,7 @@ class SingleUser extends Component {
           {item.id} - {item.name} -
           <button onClick={()=>{onSelectUser(item.id)}}>info</button>
           {/*/!*<button onClick={onSelectUser.bind(this, item.id)}>info</button>*!/ ----- old school method*/}
-        </div>
+         </div>
 
       </div>
     );

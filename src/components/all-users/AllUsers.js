@@ -5,13 +5,20 @@ class AllUsers extends Component {
 
   state = {
     users: [],
-    chosenOne: null
+    chosenOne: null,
+    chosenOnePost: null
   }
 
   onSelectUser = (id) => {
     let {users} = this.state
     let single = users.find(value => value.id === id)
     this.setState({chosenOne: single})
+
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then(value => value.json())
+      .then(posts => {
+        this.setState({chosenOnePost: posts})
+      })
   }
 
   componentDidMount() {
@@ -23,7 +30,7 @@ class AllUsers extends Component {
   }
 
   render() {
-    let {users, chosenOne} = this.state
+    let {users, chosenOne, chosenOnePost} = this.state
     return (
       <div>
         {
@@ -36,12 +43,26 @@ class AllUsers extends Component {
         }
         {
           chosenOne &&
-          <h2>
+          <div>
             <hr/>
-            {chosenOne.name} - {chosenOne.phone} - {chosenOne.username}
-          </h2>
+            Info:
+            <h3>
+              {chosenOne.name} - {chosenOne.phone} - {chosenOne.username}
+            </h3>
+          </div>
         }
-
+        {
+          chosenOnePost &&
+          <div>
+            <div>
+              <hr/>
+              Post:
+            </div>
+            <h3>
+              {chosenOnePost.id} - {chosenOnePost.title}
+            </h3>
+          </div>
+        }
       </div>
     );
   }
