@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import AllUsers from "./components/all-users/AllUsers";
 import Lesson from "./components/lesson/Lesson";
+import Router from "./components/router/Router";
 
 class App extends Component {
 
@@ -24,7 +25,7 @@ class App extends Component {
           <button onClick={this.test}>click me {this.state.flag.toString()}</button>
           <AllUsers/>
           <Lesson title={`Router`}/>
-
+          <Router/>
         </p>
       </div>
     );
