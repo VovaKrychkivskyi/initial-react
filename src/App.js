@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import AllUsers from "./components/all-users/AllUsers";
+import Lesson from "./components/lesson/Lesson";
 
 class App extends Component {
 
@@ -19,8 +20,11 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
+          <Lesson title={`Drill`}/>
           <button onClick={this.test}>click me {this.state.flag.toString()}</button>
           <AllUsers/>
+          <Lesson title={`Router`}/>
+
         </p>
       </div>
     );
