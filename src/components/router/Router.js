@@ -9,6 +9,7 @@ import {
 import AllUsers from "../all-users/AllUsers";
 import AllPosts from "../all-posts/AllPosts";
 import './Router.css'
+import AllComments from "../all-comments/AllComments";
 
 class Router extends Component {
   render() {
@@ -22,17 +23,24 @@ class Router extends Component {
             <div className="all-div">
               <Link to={`posts`}>Posts</Link>
             </div>
+            <div className="all-div">
+              <Link to={`comments`}>Comments</Link>
+            </div>
           </div>
           <hr/>
 
           <div>
             <Switch>
-              <Route path={`/users`}>
-                <AllUsers/>
-              </Route>
-              <Route path={`/posts`}>
-                <AllPosts/>
-              </Route>
+              {/*first way*/}
+              <Route path={`/users`}><AllUsers/></Route>
+
+              {/*second way*/}
+              <Route path={`/posts`} component={AllPosts}/>
+
+              {/*third way*/}
+              <Route path={`/comments`} render={()=>{
+                return <AllComments/>
+              }}/>
             </Switch>
           </div>
 
