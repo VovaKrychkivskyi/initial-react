@@ -1,12 +1,20 @@
 import React, {Component} from 'react';
+import {
+  BrowserRouter as Routerr,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
 
 class Router extends Component {
   render() {
     return (
-      <div>
+      <Routerr>
+        <div>
 
 
-      </div>
+        </div>
+      </Routerr>
     );
   }
 }
