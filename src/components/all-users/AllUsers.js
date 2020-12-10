@@ -51,6 +51,7 @@ class AllUsers extends Component {
             </h3>
           </div>
         }
+
         {
           chosenOnePost &&
           <div>
@@ -63,6 +64,7 @@ class AllUsers extends Component {
             </h3>
           </div>
         }
+
       </div>
     );
   }
